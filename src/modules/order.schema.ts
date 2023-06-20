@@ -1,12 +1,12 @@
 import * as mongoose from 'mongoose';
 
 export const OrderSchema = new mongoose.Schema({
-    ower: {
+    owner: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
     },
     totalPrice: String,
-    products: [
+    product: [
         {
             product: {
                 type: mongoose.Types.ObjectId,

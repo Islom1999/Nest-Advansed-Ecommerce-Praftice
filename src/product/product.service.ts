@@ -32,12 +32,14 @@ export class ProductService {
     const skip = Number((query.page || 1) - 1) * limit
 
     return await this.productModule.find(queryObject)
+      .populate("owner", '-password')
       .limit(limit)
       .skip(skip);
   }
 
   async findOne(id: string) {
-    return await this.productModule.findOne({ _id: id });
+    return await this.productModule.findOne({ _id: id })
+      .populate("owner", '-password');
   }
 
   async update(id: string, updateProductDto: UpdateProductDto, image: Express.Multer.File) {

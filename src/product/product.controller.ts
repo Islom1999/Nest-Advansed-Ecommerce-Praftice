@@ -7,7 +7,9 @@ import { diskStorage } from 'multer';
 import { editedFileName } from 'src/utils/file-helper';
 import { AuthGuard } from '@nestjs/passport';
 import { QueryProductDto } from './dto/query.product.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Products")
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}

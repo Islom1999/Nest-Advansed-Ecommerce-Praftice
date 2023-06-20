@@ -3,7 +3,7 @@ import { User } from "./user";
 import { Product } from "./product";
 
 interface ProductOrder{
-    products: Product;
+    product: Product;
     quantity: number;
 }
 

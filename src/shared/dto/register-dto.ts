@@ -18,7 +18,7 @@ export class RegisterDto{
     @IsNotEmpty()
     region: string;
 
-    @ApiProperty()
+    @ApiProperty({required:false})
     @IsString()
     @IsNotEmpty()
     @IsOptional()      // ixtiyoriy qator

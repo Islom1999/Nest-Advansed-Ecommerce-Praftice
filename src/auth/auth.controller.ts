@@ -4,7 +4,9 @@ import { RegisterDto } from 'src/shared/dto/register-dto';
 import { LoginDto } from 'src/shared/dto/login-dto';
 import { UserService } from 'src/shared/user.service';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Auth")
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -24,12 +26,6 @@ export class AuthController {
     return {user: user, token: token}
   }
 
-  @Get('check')
-  @UseGuards(AuthGuard('jwt'))
-  async check(){
-    return "Authorized"
-  }
-
   @Post('login')
   @UsePipes(new ValidationPipe())
   async login(@Body() userDto: LoginDto){ 
@@ -43,5 +39,9 @@ export class AuthController {
     return {user: user, token: token}
   }
 
-
+  @Get('check')
+  @UseGuards(AuthGuard('jwt'))
+  async check(){
+    return "Authorized"
+  }
 }
