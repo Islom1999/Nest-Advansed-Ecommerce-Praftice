@@ -2,6 +2,10 @@
 
 <a href='https://documenter.getpostman.com/view/20661688/2s93z3f5sZ'>https://documenter.getpostman.com/view/20661688/2s93z3f5sZ</a>
 
+## Swagger Docs
+
+<a href='http://localhost:3000/swagger'>http://localhost:3000/swagger</a>
+
 ## Installation
 
 ```bash
