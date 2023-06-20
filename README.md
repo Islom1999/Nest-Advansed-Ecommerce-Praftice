@@ -4,7 +4,7 @@
 
 ## Swagger Docs
 
-<a href='http://localhost:3000/swagger'>http://localhost:3000/swagger</a>
+<a href='http://localhost:3000/swagger#/'>http://localhost:3000/swagger</a>
 
 ## Installation
 
