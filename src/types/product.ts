@@ -7,5 +7,5 @@ export interface Product extends Document {
     image: string;
     price: string;
     amount: number;
-    owner: User
+    owner: User;
 }

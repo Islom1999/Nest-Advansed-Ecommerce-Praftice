@@ -5,7 +5,7 @@ export const ProductSchema = new mongoose.Schema({
     title: {
         type: 'string',
     },
-    descr: {
+    description: {
         type: 'string',
     },
     price: {

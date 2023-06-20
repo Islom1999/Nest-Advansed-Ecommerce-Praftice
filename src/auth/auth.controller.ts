@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from 'src/shared/dto/register-dto';
 import { LoginDto } from 'src/shared/dto/login-dto';
@@ -13,6 +13,7 @@ export class AuthController {
   ) {}
 
   @Post('register')
+  @UsePipes(new ValidationPipe())
   async create(@Body() userDto: RegisterDto){
     const user =  await this.userService.create(userDto)
     const payload = {
@@ -30,6 +31,7 @@ export class AuthController {
   }
 
   @Post('login')
+  @UsePipes(new ValidationPipe())
   async login(@Body() userDto: LoginDto){ 
     const user = await this.userService.findByLogin(userDto)
 
