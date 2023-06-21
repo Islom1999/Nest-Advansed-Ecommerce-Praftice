@@ -20,9 +20,9 @@ export class OrderService {
             order = new this.orderModule({
                 owner: orderDto.owner,
                 totalPrice: orderDto.totalPrice,
-                $set:{
-                    products: { ...orderDto.product }
-                }
+                product:[
+                    orderDto.product
+                ]
             })
 
             console.log({ ...orderDto.product })
@@ -36,9 +36,9 @@ export class OrderService {
         await order.updateOne({
             owner: orderDto.owner,
             totalPrice: orderDto.totalPrice,
-            $set:{
-                products: { ...orderDto.product }
-            }
+            product:[
+                orderDto.product
+            ]
         })
 
         return order
